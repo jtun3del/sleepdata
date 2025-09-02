@@ -122,7 +122,7 @@ else if (resp == "2")
                 { Console.Write($"{arr[i]} "); }
                 if (i % 7 == 0)
                 {
-                    Console.WriteLine($" {total}   {Math.Round(total / 7.0, 1)}");
+                    Console.WriteLine($" {total}  {Math.Round(total / 7.0, 1)}");
                     total = 0;
                 }
                 total = total + int.Parse(arr[i]);
