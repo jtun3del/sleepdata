@@ -1,7 +1,7 @@
 ﻿// ask for input
 
 using System.Diagnostics;
-
+int total = 0;
 Console.WriteLine("Enter 1 to create data file.");
 Console.WriteLine("Enter 2 to parse data.");
 Console.WriteLine("Enter anything else to quit.");
@@ -55,19 +55,76 @@ else if (resp == "2")
         
         string[] arr = String.IsNullOrEmpty(line) ? [] : line.Split('|',',');
 
+        
+        
         foreach (int i in Enumerable.Range(0, arr.Length))
         {
+            
             if (i % 8 == 0)
             {
-                Console.WriteLine("");
-                Console.WriteLine(arr[i]);
+                
+                string[] subs = arr[i].Split('/');
+                int d = int.Parse(subs[0]);
+                string month = "";
+                switch (d)
+                {
+                    case 1:
+                        month = "jan";
+                        break;
+                    case 2:
+                        month = "feb";
+                        break;
+                    case 3:
+                        month = "mar";
+                        break;
+                    case 4:
+                        month = "apr";
+                        break;
+                    case 5:
+                        month = "may";
+                        break;
+                    case 6:
+                        month = "jun";
+                        break;
+                    case 7:
+                        month = "jul";
+                        break;
+                    case 8:
+                        month = "aug";
+                        break;
+                    case 9:
+                        month = "sep";
+                        break;
+                    case 10:
+                        month = "oct";
+                        break;
+                    case 11:
+                        month = "nov";
+                        break;
+                    case 12:
+                        month = "dec";
+                        break;
+                }
+                
+                Console.WriteLine($"Week of {month}, {subs[1]}, {subs[2]}");
                 // unfinished cureently
-                Console.WriteLine("su mo tu we th fr sa");
-                Console.WriteLine("__ __ __ __ __ __ __ ");
+                Console.WriteLine("Su Mo Tu We Th Fr Sa Tot Avg");
+                Console.WriteLine("__ __ __ __ __ __ __ ___ ___");
             }
+            
             else
-            {
-                Console.Write($"{arr[i]} ");
+            { if (arr[i].Length < 2)
+                {
+                    Console.Write($" {arr[i]} ");
+                }
+                else
+                { Console.Write($"{arr[i]} "); }
+                if (i % 7 == 0)
+                {
+                    Console.WriteLine($" {total}   {Math.Round(total / 7.0, 1)}");
+                    total = 0;
+                }
+            total = total + int.Parse(arr[i]);
             }
         }
         
