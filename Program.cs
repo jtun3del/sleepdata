@@ -59,8 +59,15 @@ else if (resp == "2")
         {
             if (i % 8 == 0)
             {
+                Console.WriteLine("");
                 Console.WriteLine(arr[i]);
                 // unfinished cureently
+                Console.WriteLine("su mo tu we th fr sa");
+                Console.WriteLine("__ __ __ __ __ __ __ ");
+            }
+            else
+            {
+                Console.Write($"{arr[i]} ");
             }
         }
         
