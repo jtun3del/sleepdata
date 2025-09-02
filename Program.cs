@@ -69,40 +69,40 @@ else if (resp == "2")
                 switch (d)
                 {
                     case 1:
-                        month = "jan";
+                        month = "Jan";
                         break;
                     case 2:
-                        month = "feb";
+                        month = "Feb";
                         break;
                     case 3:
-                        month = "mar";
+                        month = "Mar";
                         break;
                     case 4:
-                        month = "apr";
+                        month = "Apr";
                         break;
                     case 5:
-                        month = "may";
+                        month = "May";
                         break;
                     case 6:
-                        month = "jun";
+                        month = "Jun";
                         break;
                     case 7:
-                        month = "jul";
+                        month = "Jul";
                         break;
                     case 8:
-                        month = "aug";
+                        month = "Aug";
                         break;
                     case 9:
-                        month = "sep";
+                        month = "Sep";
                         break;
                     case 10:
-                        month = "oct";
+                        month = "Oct";
                         break;
                     case 11:
-                        month = "nov";
+                        month = "Nov";
                         break;
                     case 12:
-                        month = "dec";
+                        month = "Dec";
                         break;
                 }
                 
@@ -113,7 +113,8 @@ else if (resp == "2")
             }
             
             else
-            { if (arr[i].Length < 2)
+            { 
+                if (arr[i].Length < 2)
                 {
                     Console.Write($" {arr[i]} ");
                 }
@@ -124,7 +125,7 @@ else if (resp == "2")
                     Console.WriteLine($" {total}   {Math.Round(total / 7.0, 1)}");
                     total = 0;
                 }
-            total = total + int.Parse(arr[i]);
+                total = total + int.Parse(arr[i]);
             }
         }
         
